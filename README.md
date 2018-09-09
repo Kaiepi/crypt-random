@@ -1,7 +1,8 @@
 # Crypt::Random
 [![Build Status](https://travis-ci.org/skinkade/crypt-random.svg?branch=master)](https://travis-ci.org/skinkade/crypt-random) [![Build status](https://ci.appveyor.com/api/projects/status/9w39bpjclskckwep/branch/master?svg=true)](https://ci.appveyor.com/project/skinkade/crypt-random)
 
-Random numbers and bytes mimicking `arc4random()`.
+Generates random numbers and bytes by using arc4random or mimicking it on
+systems that don't support it.
 
 
 ## Synopsis
@@ -35,8 +36,8 @@ my Array @sample = crypt_random_sample($set, $count);
 ```
 
 ## Entropy Sources
-Random bytes are drawn from `/dev/urandom` on Unix-like systems, and
-`CryptGenRandom()` on Windows.
+Random bytes are drawn from `/dev/urandom` on most Linux systems, `arc4random`
+on other UNIX-like systems, and `CryptGenRandom()` on Windows.
 
 ## Copyright & License
 Copyright 2016 Shawn Kinkade.
